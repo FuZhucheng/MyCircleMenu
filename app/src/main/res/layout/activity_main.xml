@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.fuzhucheng.circlemenu.UpCircleMenuLayout
+            android:id="@+id/id_mymenulayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.fuzhucheng.circlemenu.UpCircleMenuLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fragment_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="170dp"
+            android:padding="30dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/blue"
+            android:layout_marginBottom="0dp"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>
