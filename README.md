@@ -1,5 +1,6 @@
 # MyCircleMenu
 Android-自定义view之圆形与“半圆形”菜单。
+## 博客讲解：[Android-自定义view之圆形与“半圆形”菜单](http://blog.csdn.net/jack__frost/article/details/52965905)
 
 ![这里写图片描述](http://img.blog.csdn.net/20161029220755275)
 
