@@ -2,8 +2,6 @@ package com.fuzhucheng.circlemenu;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -12,6 +10,20 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+
+
+
+       double b = Math.asin(-4 / 5f);
+
+//        double b = Math.asin(s);
+
+        double b1 =  (float) (b) * 180 / Math.PI;
+//       System.out.println("11111111111111s:"+s);
+        System.out.println("11111111111111b:"+b);
+        System.out.println("11111111111111b1:"+b1);
+
+
+
+
     }
 }

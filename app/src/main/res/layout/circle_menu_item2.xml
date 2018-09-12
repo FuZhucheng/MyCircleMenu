@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+              <!--xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"-->
+              <!--android:layout_height="wrap_content"-->
+              <!--android:gravity="center"-->
+              <!--android:background="@color/colorAccent"-->
+              <!--android:orientation="vertical" tools:ignore="MissingDefaultResource">-->
+    <ImageView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/id_circle_menu_item_image3"
+        android:layout_width="wrap_content"
+        android:background="@drawable/ccb_comm_bg0"
+        android:layout_height="wrap_content" />
+
+<!--</LinearLayout>-->
