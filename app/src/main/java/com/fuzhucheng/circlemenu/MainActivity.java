@@ -1,11 +1,21 @@
 package com.fuzhucheng.circlemenu;
 
+import com.bumptech.glide.Glide;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,16 +42,63 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.ss).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+
+//               intent = new Intent(MainActivity.this, CircleActivity.class);
+//
+//                startActivity(intent);
+
+
+                View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.circle_menu_item2, null);
+                ImageView iv = (ImageView) view
+                        .findViewById(R.id.id_circle_menu_item_image3);
+//                TextView tv = (TextView) view
+//                        .findViewById(R.id.id_circle_menu_item_text2);
+//                iv.setVisibility(View.GONE);
+                iv.setImageDrawable(getResources().getDrawable((R.drawable.turnplate_center_unlogin)));
+//                tv.setText("adasd");
+
+                ImageView imageView = new ImageView(getApplicationContext());
+                imageView.setMaxHeight(50);
+                imageView.setImageDrawable(getResources().getDrawable((R.drawable.turnplate_center_unlogin)));
+//
+                myCircleMenuLayout.addByView(view);
+//                myCircleMenuLayout.removeAllViews();
+//                myCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs,mItemTexts);
+
+//                myCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs,mItemTexts);
+            }
+
+
+
+
+        });
+        findViewById(R.id.ss1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                myCircleMenuLayout.requestLayout();
+
+                addHeadView();
+
+            }
+        });
+
+
+
         //第一次初始化首页默认显示第一个fragment
         initFragment1();
         myCircleMenuLayout = (UpCircleMenuLayout) findViewById(R.id.id_mymenulayout);
-        myCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs);
+        myCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs,mItemTexts);
         myCircleMenuLayout.setOnMenuItemClickListener(new UpCircleMenuLayout.OnMenuItemClickListener() {
 
             @Override
             public void itemClick(int pos) {
-                Toast.makeText(MainActivity.this, mItemTexts[pos],
-                        Toast.LENGTH_SHORT).show();
+                System.out.println("1111111111111:"+pos);
+//                Toast.makeText(MainActivity.this, mItemTexts[pos],
+//                        Toast.LENGTH_SHORT).show();
                 switch (pos) {
                     case 0:
                         initFragment1();
@@ -87,6 +144,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
+            public void itemClick(View view, int pos) {
+
+            }
+
+            @Override
             public void itemCenterClick(View view) {
                 Toast.makeText(MainActivity.this,
                         "you can do something just like ccb  ",
@@ -95,6 +157,42 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    private void addHeadView(){
+
+        List<View> views = new ArrayList<View>();
+        for(int i=0;i<4;i++) {
+
+
+            View view = LayoutInflater.from(getApplicationContext())
+                    .inflate(R.layout.circle_menu_item3, null);
+
+
+
+            ImageView iv = (ImageView) view
+                    .findViewById(R.id.id_circle_menu_item_image);
+
+
+            Glide.with(getApplicationContext())
+                    .load("as")
+                    .placeholder(R.drawable.el_assist_icon_personal_placeholder)
+                    .bitmapTransform(
+                            new CropCircleTransformation(getApplicationContext()))
+                    .into(iv);
+//
+//
+//            tv.setText(guardianDetailVo.getRealName());
+
+            views.add(view);
+        }
+        myCircleMenuLayout.setAngleInterval(52);
+        myCircleMenuLayout.addByAllView(views);
+
+    }
+
+
+
 
     //显示第一个fragment
     private void initFragment1(){

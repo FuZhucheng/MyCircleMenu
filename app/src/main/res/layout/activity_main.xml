@@ -2,20 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+
     android:gravity="center_vertical"
     android:orientation="vertical">
-
+    <Button android:layout_width="50dp"
+            android:id="@+id/ss"
+            android:text="asa"
+            android:layout_height="50dp"/>
+    <Button android:layout_width="50dp"
+            android:id="@+id/ss1"
+            android:text="asa"
+            android:layout_height="50dp"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+        <RelativeLayout android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content">
+
+        <ImageView android:layout_width="match_parent"
+                   android:layout_height="150dp"
+                   android:id="@+id/iv_back"
+                   android:background="@drawable/el_assist_wjt_picture_back_boys"
+        />
         <com.fuzhucheng.circlemenu.UpCircleMenuLayout
             android:id="@+id/id_mymenulayout"
+            android:layout_marginTop="35dp"
+            android:background="@color/blue1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.fuzhucheng.circlemenu.UpCircleMenuLayout>
 
+            android:layout_height="wrap_content">
+
+        </com.fuzhucheng.circlemenu.UpCircleMenuLayout>
+        </RelativeLayout>
 
         <FrameLayout
             android:id="@+id/fragment_tv"
@@ -23,6 +44,8 @@
             android:layout_height="match_parent"
             android:layout_marginTop="170dp"
             android:padding="30dp"
+            android:visibility="gone"
+
             android:layout_alignParentBottom="true"
             android:background="@color/blue"
             android:layout_marginBottom="0dp"/>
